@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ds0heffxsm8u0"]
+
+[ext_resource type="PackedScene" uid="uid://bytohe4bmfeoi" path="res://main_scene_game.tscn" id="1_b3bc3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bhunq"]
+
+[node name="Control" type="Control" unique_id=1455370489]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=570036474]
+layout_mode = 0
+offset_right = 55.0
+offset_bottom = 23.0
+text = "ammo:"
+label_settings = SubResource("LabelSettings_bhunq")
+
+[node name="map" parent="." unique_id=1476742161 instance=ExtResource("1_b3bc3")]

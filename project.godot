@@ -21,6 +21,8 @@ bullet_pool_manager="*uid://c2ikg0f8lrjiq"
 
 [display]
 
+window/size/mode=2
+window/size/initial_position_type=0
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

@@ -13,7 +13,7 @@ size = Vector2(20, 688)
 [node name="map" type="Node2D" unique_id=1476742161]
 
 [node name="player" parent="." unique_id=234949660 instance=ExtResource("1_smep4")]
-position = Vector2(250, 309)
+position = Vector2(399, 330)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=740736051]
 disable_mode = 1

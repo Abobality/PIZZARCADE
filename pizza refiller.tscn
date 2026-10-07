@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dc1xftedkjg6u"]
+
+[ext_resource type="Script" uid="uid://dpxiomkctaji3" path="res://pizza_refiller.gd" id="1_fwrul"]
+[ext_resource type="Texture2D" uid="uid://dieh8esqfhvag" path="res://icon.svg" id="1_jsu5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(128, 128)
+
+[node name="Area2D" type="Area2D" unique_id=1485475984]
+script = ExtResource("1_fwrul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=830815874]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="Timer" type="Timer" parent="." unique_id=715428452]
+wait_time = 4.0
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1568860772]
+texture = ExtResource("1_jsu5k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
