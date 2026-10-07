@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ddhtddbcs8co0"]
+
+[ext_resource type="Texture2D" uid="uid://dieh8esqfhvag" path="res://icon.svg" id="1_5birb"]
+[ext_resource type="Script" uid="uid://dgeg8nn54jxjj" path="res://pizza.gd" id="2_i514n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 63.0
+
+[node name="Node2D" type="Node2D" unique_id=1508970539]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1969752603]
+texture = ExtResource("1_5birb")
+script = ExtResource("2_i514n")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1759377595]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=312931102]
+shape = SubResource("CircleShape2D_bhunq")
