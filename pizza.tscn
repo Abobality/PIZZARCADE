@@ -6,14 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 63.0
 
-[node name="Node2D" type="Node2D" unique_id=1508970539]
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1969752603]
-texture = ExtResource("1_5birb")
+[node name="Area2D" type="Area2D" unique_id=2054405996]
 script = ExtResource("2_i514n")
-BULLET_SPEED = 450
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1759377595]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=312931102]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=787106085]
 shape = SubResource("CircleShape2D_bhunq")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=535635396]
+texture = ExtResource("1_5birb")

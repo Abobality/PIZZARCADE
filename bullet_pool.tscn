@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c2ikg0f8lrjiq"]
 
 [ext_resource type="Script" uid="uid://d2pnf43a4qb04" path="res://bullet_pool.gd" id="1_k06l4"]
+[ext_resource type="PackedScene" uid="uid://ddhtddbcs8co0" path="res://pizza.tscn" id="2_mmuav"]
 
 [node name="Node2D" type="Node2D" unique_id=1808095827]
 script = ExtResource("1_k06l4")
+PIZZA = ExtResource("2_mmuav")

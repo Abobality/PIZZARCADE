@@ -21,7 +21,5 @@ func _physics_process(delta: float) -> void:
 func shoot() -> void:
 	
 	if AMMO > 0:
-		var bullet = PIZZA.instantiate();
-		bullet.global_position = global_position;
-		get_tree().current_scene.add_child(bullet);
+		bullet_pool_manager.shoot(Vector2(global_position.x + 64,global_position.y),Vector2.RIGHT)
 		AMMO-=1;
