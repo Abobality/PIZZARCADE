@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ctqi0ms13wrm2" path="res://player.tscn" id="1_smep4"]
 [ext_resource type="PackedScene" uid="uid://dc1xftedkjg6u" path="res://pizza refiller.tscn" id="2_p7ll0"]
 [ext_resource type="PackedScene" uid="uid://8dxwr0tm2evp" path="res://basic child.tscn" id="3_l8e1i"]
+[ext_resource type="PackedScene" uid="uid://nmhphhvovngf" path="res://enemy_basic.tscn" id="4_pn634"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bhunq"]
 
@@ -61,3 +62,6 @@ position = Vector2(1004, 310)
 
 [node name="basic_child3" parent="." unique_id=1911236077 instance=ExtResource("3_l8e1i")]
 position = Vector2(1006, 528)
+
+[node name="Area2D5" parent="." unique_id=127925855 instance=ExtResource("4_pn634")]
+position = Vector2(702, 225)

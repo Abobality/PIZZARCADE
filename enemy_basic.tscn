@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://nmhphhvovngf"]
+
+[ext_resource type="Texture2D" uid="uid://dieh8esqfhvag" path="res://icon.svg" id="1_20uc5"]
+[ext_resource type="Script" uid="uid://fbjyh22o8ms7" path="res://class_enemy.gd" id="1_g2x43"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 65.0
+
+[node name="Area2D" type="Area2D" unique_id=127925855]
+script = ExtResource("1_g2x43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1066517030]
+shape = SubResource("CircleShape2D_bhunq")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=2081734824]
+texture = ExtResource("1_20uc5")
+
+[node name="Timer" type="Timer" parent="." unique_id=202253353]
