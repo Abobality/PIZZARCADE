@@ -23,10 +23,10 @@ func _physics_process(delta: float) -> void:
 		shoot();
 
 func shoot() -> void:
-	
 	if AMMO > 0:
 		bullet_pool_manager.shoot(Vector2(global_position.x + 64,global_position.y),Vector2.RIGHT)
 		AMMO-=1;
+		global_signals.change_ammo.emit()
 
 func pizza_refill():
 	AMMO+=1;

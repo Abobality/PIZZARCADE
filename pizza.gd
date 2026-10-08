@@ -1,4 +1,5 @@
 extends Area2D
+class_name pizza
 
 @export var BULLET_SPEED := 300;
 @export var LIFE_TIME := 2.0;
@@ -28,3 +29,8 @@ func bullet_activate(spawn_position,shoot_direction):
 	visible = true;
 	set_physics_process(true);
 	$CollisionShape2D.set_deferred("disabled", false);
+	
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is child:
+		bullet_pool_manager.return_bullet(self)
