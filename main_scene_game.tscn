@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bytohe4bmfeoi"]
 
 [ext_resource type="PackedScene" uid="uid://ctqi0ms13wrm2" path="res://player.tscn" id="1_smep4"]
+[ext_resource type="PackedScene" uid="uid://dc1xftedkjg6u" path="res://pizza refiller.tscn" id="2_p7ll0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bhunq"]
 
@@ -38,3 +39,15 @@ shape = SubResource("RectangleShape2D_riqys")
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=904770101]
 position = Vector2(575, 328)
 shape = SubResource("RectangleShape2D_riqys")
+
+[node name="Area2D" parent="." unique_id=1485475984 instance=ExtResource("2_p7ll0")]
+position = Vector2(86, 87)
+
+[node name="Area2D2" parent="." unique_id=759931287 instance=ExtResource("2_p7ll0")]
+position = Vector2(225, 86)
+
+[node name="Area2D3" parent="." unique_id=593489502 instance=ExtResource("2_p7ll0")]
+position = Vector2(86, 224)
+
+[node name="Area2D4" parent="." unique_id=15039891 instance=ExtResource("2_p7ll0")]
+position = Vector2(224, 220)

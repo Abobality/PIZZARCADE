@@ -1,13 +1,12 @@
 extends Area2D
 
-signal pizza_refilled;
 var has_ammo = true;
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is player and has_ammo:
-		pizza_refilled.emit();
+		global_signals.pizza_refilled.emit();
 		$Icon.visible = false;
-		$Timer.one_shot;
+		$Timer.start();
 		has_ammo = false;
 
 
