@@ -1,17 +1,41 @@
 extends Area2D
 class_name enemy
 
-@export var stun_timer: float = 2.5;
+@export var stun_duration: float = 2.5;
 @export var speed: int = 200;
-var is_stunned: bool = false;
 
-func _ready() -> void:
-	$Timer.wait_time = stun_timer;
-	
-func _process(delta: float) -> void:
-	global_position.y = move_toward(global_position.y, target.global_position.y, speed * delta)
+var stun_timer: float = 0.0;
+var state: STATES = STATES.MOVE;
 
-func stun():
-	return
+enum STATES {MOVE,STUN};
+
+func _physics_process(delta: float) -> void:
+	match state:
+		STATES.MOVE:
+			move_logic(delta);
+		STATES.STUN:
+			stun_logic(delta)
+
+func move_logic(delta: float):
+	pass
+
+
+func stun_logic(delta: float):
+	stun_timer -= delta;
 	
+	if stun_timer <= 0:
+		stun_end();
+		
+func apply_stun(delta:float):
+	stun_timer = stun_duration;
+	
+	if state != STATES.STUN:
+		state = STATES.STUN;
+		stun_start();
+		
+func stun_start():
+	pass
+	
+func stun_end():
+	state = STATES.MOVE;
 	
