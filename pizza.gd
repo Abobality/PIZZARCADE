@@ -32,5 +32,5 @@ func bullet_activate(spawn_position,shoot_direction):
 	
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is child:
+	if area is child or area is enemy:
 		bullet_pool_manager.return_bullet(self)

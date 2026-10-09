@@ -26,7 +26,7 @@ func stun_logic(delta: float):
 	if stun_timer <= 0:
 		stun_end();
 		
-func apply_stun(delta:float):
+func apply_stun():
 	stun_timer = stun_duration;
 	
 	if state != STATES.STUN:

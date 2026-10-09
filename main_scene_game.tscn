@@ -63,5 +63,9 @@ position = Vector2(1004, 310)
 [node name="basic_child3" parent="." unique_id=1911236077 instance=ExtResource("3_l8e1i")]
 position = Vector2(1006, 528)
 
-[node name="Area2D5" parent="." unique_id=127925855 instance=ExtResource("4_pn634")]
-position = Vector2(702, 225)
+[node name="enemy_mover2" parent="." unique_id=641762271 instance=ExtResource("4_pn634")]
+position = Vector2(661, 326)
+
+[node name="enemy_mover" parent="." unique_id=127925855 instance=ExtResource("4_pn634")]
+position = Vector2(826, 326)
+speed = 100
