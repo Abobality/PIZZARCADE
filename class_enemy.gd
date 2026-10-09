@@ -38,4 +38,3 @@ func stun_start():
 	
 func stun_end():
 	state = STATES.MOVE;
-	
