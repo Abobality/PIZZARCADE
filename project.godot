@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 bullet_pool_manager="*uid://c2ikg0f8lrjiq"
 global_signals="*uid://cy50bxgbndrag"
+position_mono="*uid://c7n5t84urta0g"
 
 [display]
 
