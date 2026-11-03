@@ -7,4 +7,5 @@ func feed():
 	hungry-=1;
 	
 	if hungry <= 0:
+		global_signals.score_gain.emit(100);
 		queue_free();

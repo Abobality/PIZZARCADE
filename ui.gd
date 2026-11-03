@@ -1,11 +1,14 @@
 extends Control
 
 var ammo: int = 0;
+var score: int = 0;
 
 func _ready() -> void:
 	global_signals.change_ammo.connect(func():change_info_ammo("decrease"))
 	global_signals.pizza_refilled.connect(func():change_info_ammo("increase"))
+	global_signals.score_gain.connect(update_score_info);
 	update_ammo_info();
+	update_score_info();
 
 func change_info_ammo(type: String):
 	match type:
@@ -18,5 +21,7 @@ func change_info_ammo(type: String):
 	
 	
 func update_ammo_info():
-	$ammo_show.text = "pizza: %d" % ammo
-	
+	$HBoxContainer/ammo_show.text = "pizza: %d" % ammo
+
+func update_score_info():
+	$HBoxContainer/score_show.text = "score %d" % score

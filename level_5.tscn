@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b2xg5k3u74sqm"]
+
+[ext_resource type="PackedScene" uid="uid://blwmxwx0utqea" path="res://map.tscn" id="1_cp4ax"]
+[ext_resource type="PackedScene" uid="uid://8dxwr0tm2evp" path="res://basic child.tscn" id="2_br4so"]
+[ext_resource type="PackedScene" uid="uid://d1lkitkqe8yld" path="res://enemy_flex.tscn" id="3_8ons7"]
+
+[node name="level_5" type="Node2D" unique_id=2060499616]
+
+[node name="map" parent="." unique_id=917174360 instance=ExtResource("1_cp4ax")]
+
+[node name="basic_child" parent="." unique_id=1486003508 instance=ExtResource("2_br4so")]
+position = Vector2(1088, 128)
+
+[node name="basic_child2" parent="." unique_id=2056967728 instance=ExtResource("2_br4so")]
+position = Vector2(1088, 328)
+
+[node name="basic_child4" parent="." unique_id=1002497905 instance=ExtResource("2_br4so")]
+position = Vector2(928, 224)
+
+[node name="basic_child5" parent="." unique_id=1682633049 instance=ExtResource("2_br4so")]
+position = Vector2(928, 416)
+
+[node name="basic_child3" parent="." unique_id=1229209243 instance=ExtResource("2_br4so")]
+position = Vector2(1088, 520)
+
+[node name="enemy_flex" parent="." unique_id=718822330 instance=ExtResource("3_8ons7")]
+position = Vector2(648, 64)
+MIN = 64.0
+MAX = 576.0

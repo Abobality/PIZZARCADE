@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ds0heffxsm8u0"]
 
 [ext_resource type="Script" uid="uid://dai8sxdw2gf1j" path="res://ui.gd" id="1_3b2b5"]
-[ext_resource type="PackedScene" uid="uid://bytohe4bmfeoi" path="res://main_scene_game.tscn" id="1_b3bc3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bhunq"]
 
@@ -14,13 +13,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b2b5")
 
-[node name="ammo_show" type="Label" parent="." unique_id=570036474]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1217114958]
 layout_mode = 0
-offset_right = 108.0
-offset_bottom = 53.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 39.0
+theme_override_constants/separation = 64
+accessibility_region = true
+
+[node name="ammo_show" type="Label" parent="HBoxContainer" unique_id=570036474]
+layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "ammo:"
 label_settings = SubResource("LabelSettings_bhunq")
 metadata/_edit_use_anchors_ = true
 
-[node name="map" parent="." unique_id=1476742161 instance=ExtResource("1_b3bc3")]
+[node name="score_show" type="Label" parent="HBoxContainer" unique_id=1916505051]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "score:"
+label_settings = SubResource("LabelSettings_bhunq")
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dfrf1d0smkhyr"]
+
+[ext_resource type="PackedScene" uid="uid://blwmxwx0utqea" path="res://map.tscn" id="1_aab6h"]
+[ext_resource type="PackedScene" uid="uid://8dxwr0tm2evp" path="res://basic child.tscn" id="2_4y126"]
+[ext_resource type="PackedScene" uid="uid://c6hpmgf7mnomw" path="res://baby_flex.tscn" id="3_7i33c"]
+[ext_resource type="PackedScene" uid="uid://nmhphhvovngf" path="res://enemy_basic.tscn" id="4_7i33c"]
+[ext_resource type="PackedScene" uid="uid://d1lkitkqe8yld" path="res://enemy_flex.tscn" id="5_xx8ku"]
+
+[node name="level_9" type="Node2D" unique_id=60974729]
+
+[node name="enemy_flex" parent="." unique_id=718822330 instance=ExtResource("5_xx8ku")]
+position = Vector2(776, 64)
+MIN = 64.0
+MAX = 576.0
+
+[node name="map" parent="." unique_id=917174360 instance=ExtResource("1_aab6h")]
+
+[node name="basic_child" parent="." unique_id=1486003508 instance=ExtResource("2_4y126")]
+position = Vector2(1088, 128)
+
+[node name="basic_child2" parent="." unique_id=459099089 instance=ExtResource("2_4y126")]
+position = Vector2(1088, 328)
+
+[node name="basic_child3" parent="." unique_id=177543567 instance=ExtResource("2_4y126")]
+position = Vector2(1088, 520)
+
+[node name="baby_flex" parent="." unique_id=779296075 instance=ExtResource("3_7i33c")]
+position = Vector2(960, 232)
+
+[node name="baby_flex2" parent="." unique_id=1475836224 instance=ExtResource("3_7i33c")]
+position = Vector2(960, 424)
+
+[node name="enemy_mover" parent="." unique_id=127925855 instance=ExtResource("4_7i33c")]
+position = Vector2(648, 64)

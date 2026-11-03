@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pizza shooter"
-run/main_scene="uid://ds0heffxsm8u0"
+run/main_scene="uid://bytohe4bmfeoi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
