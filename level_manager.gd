@@ -1,16 +1,23 @@
 extends Node2D
 
-var levels = {
-	"level_1": "res://level_1.tscn",
-	"level_2": "res://level_2.tscn",
-	"level_3": "res://level_3.tscn",
-	"level_4": "res://level_4.tscn",
-	"level_5": "res://level_5.tscn",
-	"level_6": "res://level_6.tscn",
-	"level_7": "res://level_7.tscn",
-	"level_8": "res://level_8.tscn",
-	"level_9": "res://level_9.tscn"
-}
+var current_level: Node = null;
+var current_level_num: int = 0;
+
 
 func _ready() -> void:
-	add_child(load(levels.level_1).instantiate());
+	change_level(1)
+	
+
+func change_level(level_num: int):
+	var path = "res://level_%d.tscn" % level_num;
+	
+	if not ResourceLoader.exists(path):
+		return; 
+		
+	if current_level != null:
+		current_level.queue_free();
+		
+	current_level = load(path).instantiate();
+	add_child(current_level);
+	
+	current_level_num = level_num

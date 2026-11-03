@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 63.28507
 
-[node name="basic_child" type="Area2D" unique_id=1486003508]
+[node name="basic_child" type="Area2D" unique_id=1486003508 groups=["children"]]
 script = ExtResource("1_bsgjq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690387428]
