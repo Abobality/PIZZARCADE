@@ -5,6 +5,7 @@ var current_level_num: int = 0;
 
 
 func _ready() -> void:
+	
 	change_level(1)
 	
 
