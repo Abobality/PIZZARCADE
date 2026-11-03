@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dj4ekwu763o1v"]
+
+[ext_resource type="PackedScene" uid="uid://blwmxwx0utqea" path="res://map.tscn" id="1_1fhj5"]
+[ext_resource type="PackedScene" uid="uid://8dxwr0tm2evp" path="res://basic child.tscn" id="2_16pka"]
+[ext_resource type="PackedScene" uid="uid://nmhphhvovngf" path="res://enemy_basic.tscn" id="3_16pka"]
+
+[node name="level_3" type="Node2D" unique_id=150442375]
+
+[node name="map" parent="." unique_id=917174360 instance=ExtResource("1_1fhj5")]
+
+[node name="basic_child" parent="." unique_id=1486003508 instance=ExtResource("2_16pka")]
+position = Vector2(1024, 128)
+
+[node name="basic_child2" parent="." unique_id=1502813456 instance=ExtResource("2_16pka")]
+position = Vector2(1024, 328)
+
+[node name="basic_child4" parent="." unique_id=1895513369 instance=ExtResource("2_16pka")]
+position = Vector2(864, 224)
+
+[node name="basic_child5" parent="." unique_id=1325431384 instance=ExtResource("2_16pka")]
+position = Vector2(864, 416)
+
+[node name="basic_child3" parent="." unique_id=2137463433 instance=ExtResource("2_16pka")]
+position = Vector2(1024, 520)
+
+[node name="enemy_mover" parent="." unique_id=127925855 instance=ExtResource("3_16pka")]
+position = Vector2(648, 64)

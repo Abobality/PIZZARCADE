@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://blwmxwx0utqea"]
+
+[ext_resource type="PackedScene" uid="uid://dc1xftedkjg6u" path="res://pizza refiller.tscn" id="1_c7s6e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6lj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7s6e"]
+size = Vector2(1153, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wijl4"]
+size = Vector2(20, 688)
+
+[node name="map" type="Node2D" unique_id=917174360]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1843931738]
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_e6lj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1584681448]
+position = Vector2(575.5, -10)
+shape = SubResource("RectangleShape2D_c7s6e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=127270324]
+position = Vector2(576, 658)
+shape = SubResource("RectangleShape2D_c7s6e")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=699459403]
+position = Vector2(-12, 326)
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=2099472445]
+position = Vector2(1163, 327)
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1718820520]
+position = Vector2(575, 328)
+shape = SubResource("RectangleShape2D_wijl4")
+
+[node name="Area2D" parent="." unique_id=1485475984 instance=ExtResource("1_c7s6e")]
+position = Vector2(64, 64)
+
+[node name="Area2D3" parent="." unique_id=1847776755 instance=ExtResource("1_c7s6e")]
+position = Vector2(64, 192)
+
+[node name="Area2D4" parent="." unique_id=2081286174 instance=ExtResource("1_c7s6e")]
+position = Vector2(192, 192)
+
+[node name="Area2D5" parent="." unique_id=1096834538 instance=ExtResource("1_c7s6e")]
+position = Vector2(192, 320)
+
+[node name="Area2D6" parent="." unique_id=2105402795 instance=ExtResource("1_c7s6e")]
+position = Vector2(64, 320)
+
+[node name="Area2D2" parent="." unique_id=247872149 instance=ExtResource("1_c7s6e")]
+position = Vector2(192, 64)

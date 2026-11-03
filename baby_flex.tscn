@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c6hpmgf7mnomw"]
+
+[ext_resource type="Script" uid="uid://ix51mme25by0" path="res://flex_child.gd" id="1_sa2ei"]
+[ext_resource type="Texture2D" uid="uid://dieh8esqfhvag" path="res://icon.svg" id="2_u1fqg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
+radius = 64.00781
+
+[node name="baby_flex" type="Area2D" unique_id=779296075]
+script = ExtResource("1_sa2ei")
+hungry = 5
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1437438406]
+texture = ExtResource("2_u1fqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=142518900]
+shape = SubResource("CircleShape2D_bhunq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1819675141]
+wait_time = 2.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

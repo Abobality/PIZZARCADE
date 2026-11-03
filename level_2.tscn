@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://70dx5u811d4i"]
+
+[ext_resource type="PackedScene" uid="uid://blwmxwx0utqea" path="res://map.tscn" id="1_nmjpi"]
+[ext_resource type="PackedScene" uid="uid://8dxwr0tm2evp" path="res://basic child.tscn" id="2_xdadj"]
+
+[node name="level 2" type="Node2D" unique_id=1472671923]
+
+[node name="map" parent="." unique_id=917174360 instance=ExtResource("1_nmjpi")]
+
+[node name="basic_child" parent="." unique_id=1486003508 instance=ExtResource("2_xdadj")]
+position = Vector2(1024, 128)
+
+[node name="basic_child2" parent="." unique_id=1359862455 instance=ExtResource("2_xdadj")]
+position = Vector2(1024, 328)
+
+[node name="basic_child4" parent="." unique_id=1168808569 instance=ExtResource("2_xdadj")]
+position = Vector2(864, 224)
+
+[node name="basic_child5" parent="." unique_id=1686102697 instance=ExtResource("2_xdadj")]
+position = Vector2(864, 416)
+
+[node name="basic_child3" parent="." unique_id=339068325 instance=ExtResource("2_xdadj")]
+position = Vector2(1024, 520)
