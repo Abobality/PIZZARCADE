@@ -6,7 +6,7 @@ var score: int = 0;
 func _ready() -> void:
 	global_signals.change_ammo.connect(func():change_info_ammo("decrease"))
 	global_signals.pizza_refilled.connect(func():change_info_ammo("increase"))
-	global_signals.score_gain.connect(update_score_info);
+	global_signals.score_gain.connect(change_info_score);
 	update_ammo_info();
 	update_score_info();
 
@@ -19,6 +19,9 @@ func change_info_ammo(type: String):
 			
 	update_ammo_info();
 	
+func change_info_score(scores: int):
+	score+=scores;
+	update_score_info()
 	
 func update_ammo_info():
 	$HBoxContainer/ammo_show.text = "pizza: %d" % ammo

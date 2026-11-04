@@ -12,7 +12,7 @@ func _ready() -> void:
 	center_offset = (MAX + MIN) / 2.0;
 
 func move_logic(delta: float):
-	time += delta * speed;
+	time += delta * speed/100;
 	var new_coord = center_offset + sin(time) * amplitude;
 	global_position.y = new_coord;
 

@@ -12,6 +12,8 @@
 position = Vector2(776, 64)
 MIN = 64.0
 MAX = 576.0
+stun_duration = 5.0
+speed = 100
 
 [node name="map" parent="." unique_id=917174360 instance=ExtResource("1_aab6h")]
 

@@ -27,8 +27,10 @@ position = Vector2(1088, 520)
 position = Vector2(648, 64)
 MIN = 64.0
 MAX = 576.0
+speed = 10
 
 [node name="enemy_flex2" parent="." unique_id=1141117364 instance=ExtResource("3_yxwl1")]
 position = Vector2(768, 584)
 MIN = 64.0
 MAX = 576.0
+speed = 10

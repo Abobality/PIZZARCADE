@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blwmxwx0utqea"]
 
 [ext_resource type="PackedScene" uid="uid://dc1xftedkjg6u" path="res://pizza refiller.tscn" id="1_c7s6e"]
+[ext_resource type="PackedScene" uid="uid://ctqi0ms13wrm2" path="res://player.tscn" id="2_wijl4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e6lj2"]
 
@@ -53,3 +54,6 @@ position = Vector2(64, 320)
 
 [node name="Area2D2" parent="." unique_id=247872149 instance=ExtResource("1_c7s6e")]
 position = Vector2(192, 64)
+
+[node name="player" parent="." unique_id=234949660 instance=ExtResource("2_wijl4")]
+position = Vector2(384, 320)

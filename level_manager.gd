@@ -5,8 +5,8 @@ var current_level_num: int = 0;
 
 
 func _ready() -> void:
-	
-	change_level(1)
+	global_signals.change_level.connect(check_n_change)
+	check_n_change()
 	
 
 func change_level(level_num: int):
@@ -21,4 +21,10 @@ func change_level(level_num: int):
 	current_level = load(path).instantiate();
 	add_child(current_level);
 	
-	current_level_num = level_num
+
+func check_n_change():
+	current_level_num+=1;
+	if current_level_num > 9:
+		return;
+		
+	change_level(current_level_num);
