@@ -1,22 +1,26 @@
 [gd_scene format=3 uid="uid://bytohe4bmfeoi"]
 
 [ext_resource type="Script" uid="uid://f4sa21c2iw1c" path="res://level_manager.gd" id="1_p7ll0"]
+[ext_resource type="Script" uid="uid://dwquvow88oc2p" path="res://time_manager.gd" id="1_pn634"]
 [ext_resource type="PackedScene" uid="uid://ds0heffxsm8u0" path="res://UI.tscn" id="1_smep4"]
 [ext_resource type="Script" uid="uid://crrqntx6mjeva" path="res://score_counter.gd" id="2_l8e1i"]
 
 [node name="main game" type="Node2D" unique_id=1476742161]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1887328096]
+
+[node name="Control" parent="CanvasLayer" unique_id=1455370489 instance=ExtResource("1_smep4")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="time_manager" type="Node2D" parent="." unique_id=2068964403]
+script = ExtResource("1_pn634")
 
 [node name="level_manager" type="Node2D" parent="." unique_id=1552869419]
 script = ExtResource("1_p7ll0")
 
 [node name="score_counter" type="Node2D" parent="." unique_id=2095885078]
 script = ExtResource("2_l8e1i")
-
-[node name="Control" parent="." unique_id=1455370489 instance=ExtResource("1_smep4")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
