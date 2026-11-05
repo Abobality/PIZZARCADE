@@ -34,3 +34,7 @@ theme_override_font_sizes/font_size = 32
 text = "score:"
 label_settings = SubResource("LabelSettings_bhunq")
 metadata/_edit_use_anchors_ = true
+
+[node name="time_show" type="Label" parent="HBoxContainer" unique_id=1780209809]
+layout_mode = 2
+text = "time:"

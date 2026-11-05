@@ -6,6 +6,8 @@
 
 [node name="main game" type="Node2D" unique_id=1476742161]
 
+[node name="time_manager" type="Node2D" parent="." unique_id=2068964403]
+
 [node name="level_manager" type="Node2D" parent="." unique_id=1552869419]
 script = ExtResource("1_p7ll0")
 

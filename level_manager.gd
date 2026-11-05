@@ -6,6 +6,7 @@ var current_level_num: int = 0;
 
 func _ready() -> void:
 	global_signals.change_level.connect(check_n_change)
+	global_signals.game_start.emit()
 	check_n_change()
 	
 

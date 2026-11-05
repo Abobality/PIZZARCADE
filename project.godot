@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 bullet_pool_manager="*uid://c2ikg0f8lrjiq"
 global_signals="*uid://cy50bxgbndrag"
 position_mono="*uid://c7n5t84urta0g"
+LootLockerSDK="*uid://btsmjdqsaihfr"
 
 [display]
 
@@ -27,6 +28,10 @@ window/size/mode=2
 window/size/initial_position_type=0
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/LootLockerSDK/plugin.cfg")
 
 [global_group]
 
