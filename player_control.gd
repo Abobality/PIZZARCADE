@@ -14,7 +14,7 @@ func _exit_tree() -> void:
 	if position_mono.player == self:
 		position_mono.player = null;
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	
 	if direction:

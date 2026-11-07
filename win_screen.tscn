@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://chucrjfdm48ip"]
 
+[ext_resource type="Script" uid="uid://c7rjj5fa1h4aw" path="res://win_screen.gd" id="1_l2arl"]
+
 [node name="WinScreen" type="Node2D" unique_id=1723621765]
+script = ExtResource("1_l2arl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1354675209]
+
+[node name="win_text_show" type="Label" parent="CanvasLayer" unique_id=1844886648]
+offset_right = 40.0
+offset_bottom = 23.0
