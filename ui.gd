@@ -2,6 +2,7 @@ extends Control
 
 var ammo: int = 0;
 var score: int = 0;
+var level: int = 1;
 var start_time: int = 0;
 var elapsed_ms: int = 0;
 var is_running: bool = false;
@@ -12,11 +13,13 @@ func _ready() -> void:
 	global_signals.change_ammo.connect(func():change_info_ammo("decrease"))
 	global_signals.pizza_refilled.connect(func():change_info_ammo("increase"))
 	global_signals.change_level.connect(func():change_info_ammo("new_level"))
+	global_signals.change_level.connect(change_level_info)
 	global_signals.score_gain.connect(change_info_score)
 	print(global_signals.game_start.is_connected(start_timer))
 	
 	update_ammo_info();
 	update_score_info();
+	update_level_info();
 
 func _process(_delta: float) -> void:
 	if is_running:
@@ -32,6 +35,10 @@ func change_info_ammo(type: String):
 			ammo = 0;
 			
 	update_ammo_info();
+
+func change_level_info():
+	level+=1;
+	update_level_info();
 	
 func start_timer():
 	start_time = Time.get_ticks_msec();
@@ -42,8 +49,6 @@ func stop_timer():
 	is_running = false;
 	return elapsed_ms;
 	
-
-	
 func change_info_score(scores: int):
 	score+=scores;
 	update_score_info()
@@ -53,6 +58,9 @@ func update_ammo_info():
 
 func update_score_info():
 	$HBoxContainer/score_show.text = "score %d" % score
+
+func update_level_info():
+	$HBoxContainer/level_show.text = "level %d" % level
 
 func update_time_info():
 	elapsed_ms = Time.get_ticks_msec() - start_time;

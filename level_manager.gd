@@ -26,6 +26,7 @@ func change_level(level_num: int):
 func check_n_change():
 	current_level_num+=1;
 	if current_level_num > 9:
+		global_signals.game_end.emit();
 		return;
 		
 	change_level(current_level_num);
