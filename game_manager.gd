@@ -25,6 +25,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		if event.keycode == KEY_N: 
 			global_signals.change_level.emit();
+		if event.keycode == KEY_Q: 
+			global_signals.game_end.emit();
 			
 func victory():
 	game_state = GAME_STATE.VICTORY;
@@ -36,19 +38,22 @@ func victory():
 func get_data():
 	if has_node("time_manager"):
 		time = $time_manager.elapsed_ms
+		print(time)
+	else:
+		print("error")
 	
-func set_data(scene):
-	if has_node(scene):
-		scene.time_result = time;
+func set_data(_scene):
+	_scene.time_result = time;
 	
 
 func change_screen_to_win():
-	$CanvasLayer.queue_free();
+	var win_scene = preload("res://win_screen.tscn");
+	var scene = win_scene.instantiate()
+	set_data(scene);
 	$time_manager.queue_free();
 	$level_manager.queue_free();
 	$score_counter.queue_free();
+	$CanvasLayer.queue_free();
 	await get_tree().process_frame
-	var win_scene = preload("res://win_screen.tscn");
-	var scene = win_scene.instantiate()
 	add_child(scene);
-	set_data(scene);
+	

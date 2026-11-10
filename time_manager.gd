@@ -14,5 +14,7 @@ func start_timer():
 	print("timer on")
 	
 func stop_timer():
-	is_running = false;
+	if is_running:
+		elapsed_ms = Time.get_ticks_msec() - start_time; 
+		is_running = false;
 	return elapsed_ms;
