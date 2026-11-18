@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name player
 
 @export var SPEED := 300;
-@onready var animation_player = $AnimationPlayer;
+@onready var animation_player: AnimationPlayer = $AnimationPlayer;
 
 var AMMO := 0;
 var state = STATES.IDLE;
@@ -29,15 +29,13 @@ func _exit_tree() -> void:
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	
-	match state:
-		STATES.IDLE:
-			idlyng();
-		STATES.IDLE_PIZZA:
-			pass;
-		STATES.MOVE:
-			pass;
-		STATES.MOVE_PIZZA:
-			pass;
+	if direction != Vector2.ZERO:
+		change_state(STATES.MOVE_PIZZA if AMMO > 0 else STATES.MOVE)
+		velocity = direction * SPEED
+	else:
+		change_state(STATES.IDLE_PIZZA if AMMO > 0 else STATES.IDLE)
+		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		
 	
 	if direction:
 		velocity = direction * SPEED;
@@ -48,6 +46,11 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_released("ui_shoot"):
 		shoot();
+	
+	if direction.x < 0 or (direction.x == 0 and direction.y < 0):
+		$Sprite2D.scale.x = -5
+	elif direction != Vector2.ZERO:
+		$Sprite2D.scale.x = 5
 		
 
 func shoot() -> void:
@@ -59,17 +62,35 @@ func shoot() -> void:
 func pizza_refill():
 	AMMO+=1;
 	
-func idlyng():
-	var __chance = 1;
-	animation_player.play("idle")
-	if animation_player.animation_finished:
-		__chance = randi_range(1,100);
-		print("chance: %d" %__chance)
-		if __chance <= 33:
-			animation_player.play("idle_blink");
+
+func _on_animation_finished(anim_name: String) -> void:
+	if state != STATES.IDLE:
+		return
+	
+	idlyng(anim_name)
+
+func idlyng(anim_name):
+	if anim_name == "idle":
+		var chance := randi_range(1, 100)
+		if chance <= 33:
+			animation_player.play("idle_blink")
 		else:
-			animation_player.play("idle");
+			animation_player.play("idle")
+	else: 
+		animation_player.play("idle")
 
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	pass # Replace with function body.
+func change_state(new_state: STATES) -> void:
+	if state == new_state:
+		return 
+		
+	state = new_state
+	
+	match state:
+		STATES.IDLE:
+			animation_player.play("idle")
+		STATES.IDLE_PIZZA:
+			animation_player.play("idle_pizza")
+		STATES.MOVE:
+			pass
+		STATES.MOVE_PIZZA:
+			pass

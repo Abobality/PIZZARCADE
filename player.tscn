@@ -24,7 +24,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_hqtel"]
 resource_name = "idle"
 length = 0.3
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -40,8 +39,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_onrkg"]
 resource_name = "idle_blink"
-length = 0.33333334
-loop_mode = 1
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,11 +53,15 @@ tracks/0/keys = {
 "values": [18, 19]
 }
 
+[sub_resource type="Animation" id="Animation_sweqy"]
+resource_name = "idle_pizza"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sweqy"]
 _data = {
 &"RESET": SubResource("Animation_i3pqv"),
 &"idle": SubResource("Animation_hqtel"),
-&"idle_blink": SubResource("Animation_onrkg")
+&"idle_blink": SubResource("Animation_onrkg"),
+&"idle_pizza": SubResource("Animation_sweqy")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhunq"]
@@ -68,7 +70,6 @@ atlas = ExtResource("2_onrkg")
 [node name="player" type="CharacterBody2D" unique_id=234949660]
 motion_mode = 1
 script = ExtResource("1_onrkg")
-SPEED = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962156921]
 texture_filter = 1
@@ -80,10 +81,8 @@ libraries/ = SubResource("AnimationLibrary_sweqy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=307203711]
 texture_filter = 1
-scale = Vector2(2, 2)
+scale = Vector2(5, 5)
 texture = SubResource("AtlasTexture_bhunq")
 hframes = 8
 vframes = 5
 frame = 16
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
