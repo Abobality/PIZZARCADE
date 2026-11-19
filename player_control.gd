@@ -64,13 +64,18 @@ func pizza_refill():
 	
 
 func _on_animation_finished(anim_name: String) -> void:
-	if state == STATES.IDLE:
-		idlyng(anim_name,"idle","idle_blink")
-	elif state == STATES.IDLE_PIZZA:
-		idlyng(anim_name,"idle_pizza","idle_blink_pizza")
+	match state:
+		STATES.IDLE:
+			animation_blink_player(anim_name,"idle","idle_blink")
+		STATES.IDLE_PIZZA:
+			animation_blink_player(anim_name,"idle_pizza","idle_blink_pizza")
+		STATES.MOVE:
+			animation_blink_player(anim_name,"move","move_blink")
+		STATES.MOVE_PIZZA:
+			animation_blink_player(anim_name,"move_pizza","move_blink_pizza")
 	
 
-func idlyng(anim_name,basic_idle,blink_idle):
+func animation_blink_player(anim_name,basic_idle,blink_idle):
 	if anim_name == basic_idle:
 		var chance := randi_range(1, 100)
 		if chance <= 20:
@@ -92,6 +97,6 @@ func change_state(new_state: STATES) -> void:
 		STATES.IDLE_PIZZA:
 			animation_player.play("idle_pizza")
 		STATES.MOVE:
-			pass
+			animation_player.play("move")
 		STATES.MOVE_PIZZA:
-			pass
+			animation_player.play("move_pizza")
