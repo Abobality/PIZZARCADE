@@ -237,10 +237,12 @@ texture_filter = 1
 shape = SubResource("CircleShape2D_bhunq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2065040595]
-root_node = NodePath("../Sprite2D")
+root_node = NodePath("../Visuals/Sprite2D")
 libraries/ = SubResource("AnimationLibrary_sweqy")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=307203711]
+[node name="Visuals" type="Node2D" parent="." unique_id=408944790]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals" unique_id=307203711]
 texture_filter = 1
 scale = Vector2(5, 5)
 texture = SubResource("AtlasTexture_bhunq")
@@ -248,5 +250,5 @@ hframes = 8
 vframes = 5
 frame = 16
 
-[node name="pizza_box" parent="Sprite2D" unique_id=340573138 instance=ExtResource("3_i3pqv")]
+[node name="pizza_box" parent="Visuals/Sprite2D" unique_id=340573138 instance=ExtResource("3_i3pqv")]
 position = Vector2(4.8, -4.7999997)

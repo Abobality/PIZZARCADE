@@ -49,13 +49,14 @@ func _physics_process(_delta: float) -> void:
 		direction = Vector2(1,0)
 	
 	if direction.x < 0 or (direction.x == 0 and direction.y < 0):
-		$Sprite2D.scale.x = -5
+		$Visuals.scale.x = -1
 	elif direction != Vector2.ZERO:
-		$Sprite2D.scale.x = 5
+		$Visuals.scale.x = 1
 		
 
 func shoot() -> void:
 	if AMMO > 0:
+		juice.scale_change($Visuals/Sprite2D, 6.5, 2.5, 5.0, 5.0, 15)
 		bullet_pool_manager.shoot(Vector2(global_position.x + 64,global_position.y),Vector2.RIGHT)
 		AMMO-=1;
 		global_signals.change_ammo.emit()
