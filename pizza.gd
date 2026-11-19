@@ -7,6 +7,9 @@ var direction: Vector2 = Vector2.RIGHT
 var is_active := false;
 var current_life_timer := 0.0;
 
+func _ready() -> void:
+	global_signals.change_level.connect(bullet_deactivate)
+
 func _physics_process(delta: float) -> void:
 	position += direction * BULLET_SPEED * delta
 	

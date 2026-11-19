@@ -18,7 +18,7 @@ func change_level(level_num: int):
 		
 	if current_level != null:
 		current_level.queue_free();
-		
+	
 	current_level = load(path).instantiate();
 	add_child(current_level);
 	
