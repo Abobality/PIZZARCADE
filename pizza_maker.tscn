@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://cp8latxyfatr6"]
+
+[ext_resource type="Script" uid="uid://bkl4s2833pxmy" path="res://button_script.gd" id="1_8p8sp"]
+[ext_resource type="Script" uid="uid://cqhpnltbivog0" path="res://pizza_maker.gd" id="1_w8vbe"]
+[ext_resource type="Texture2D" uid="uid://f50qq6643cti" path="res://pizza.png" id="2_is5sg"]
+[ext_resource type="Script" uid="uid://dyk7x808bith3" path="res://action_pizza_button.gd" id="2_ymnrh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riqys"]
+atlas = ExtResource("2_is5sg")
+
+[node name="pizza_maker" type="Control" unique_id=2035405081]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_w8vbe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=418380174]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 48.0
+offset_right = 528.0
+offset_bottom = 408.0
+theme_override_constants/separation = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=668730959]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 34
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=82503580]
+layout_mode = 2
+text = "pepperoni"
+script = ExtResource("2_ymnrh")
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=161680613]
+layout_mode = 2
+text = "basil"
+script = ExtResource("2_ymnrh")
+ingridient_index = 2
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1874796925]
+layout_mode = 2
+text = "mushroom"
+script = ExtResource("2_ymnrh")
+ingridient_index = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=394346991]
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_constants/separation = 34
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=27104107]
+layout_mode = 2
+text = "sausage"
+script = ExtResource("2_ymnrh")
+ingridient_index = 1
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=821194515]
+layout_mode = 2
+text = "pineapple"
+script = ExtResource("1_8p8sp")
+
+[node name="Button3" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=427275860]
+layout_mode = 2
+text = "olives"
+script = ExtResource("2_ymnrh")
+ingridient_index = 5
+
+[node name="pizza" type="Sprite2D" parent="." unique_id=550567740]
+texture_filter = 1
+position = Vector2(416, 128)
+scale = Vector2(10.499998, 10)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 7
+
+[node name="pepperoni" type="Sprite2D" parent="pizza" unique_id=614808863]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 7
+frame = 1
+
+[node name="sausages" type="Sprite2D" parent="pizza" unique_id=1522981432]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 7
+frame = 2
+
+[node name="basil" type="Sprite2D" parent="pizza" unique_id=894074493]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 7
+frame = 3
+
+[node name="pineapple" type="Sprite2D" parent="pizza" unique_id=896572068]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 7
+frame = 4
+
+[node name="mushroom" type="Sprite2D" parent="pizza" unique_id=624736479]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 7
+frame = 5
+
+[node name="olives" type="Sprite2D" parent="pizza" unique_id=458066902]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 7
+frame = 6
