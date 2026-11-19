@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://d4kcavdc2srtt"]
+
+[ext_resource type="Texture2D" uid="uid://b1ub0o36ogjgo" path="res://pizza_obj.png" id="1_7njfw"]
+[ext_resource type="Script" uid="uid://bekyas2ds0k62" path="res://pizza_box.gd" id="1_kwsw1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riqys"]
+atlas = ExtResource("1_7njfw")
+
+[node name="pizza_box" type="Node2D" unique_id=340573138]
+position = Vector2(0, -8)
+script = ExtResource("1_kwsw1")
+bob_speed = 24.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582452006]
+texture_filter = 1
+texture = SubResource("AtlasTexture_riqys")
+hframes = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=803056908]
+texture_filter = 1
+position = Vector2(0, -3)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 2
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1459678440]
+texture_filter = 1
+position = Vector2(0, -6)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 2
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=488082529]
+texture_filter = 1
+position = Vector2(0, -9)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 2
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=343730163]
+texture_filter = 1
+position = Vector2(0, -12)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 2
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=2071964125]
+texture_filter = 1
+position = Vector2(0, -15)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 2
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1501400286]
+texture_filter = 1
+position = Vector2(0, -18)
+texture = SubResource("AtlasTexture_riqys")
+hframes = 2

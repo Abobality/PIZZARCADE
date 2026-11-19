@@ -46,6 +46,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if Input.is_action_just_released("ui_shoot"):
 		shoot();
+		direction = Vector2(1,0)
 	
 	if direction.x < 0 or (direction.x == 0 and direction.y < 0):
 		$Sprite2D.scale.x = -5
