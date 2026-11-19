@@ -119,3 +119,13 @@ scale = Vector2(0.99999994, 0.99999994)
 texture = SubResource("AtlasTexture_riqys")
 hframes = 7
 frame = 6
+
+[node name="Button" type="Button" parent="." unique_id=1823497596]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 520.0
+offset_right = 1144.0
+offset_bottom = 600.0
+text = "start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

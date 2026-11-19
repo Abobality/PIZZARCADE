@@ -2,29 +2,33 @@ extends Node2D
 
 
 enum GAME_STATE{
+	NONE,
 	PIZZA,
 	PLAY,
 	END
 };
 
-var game_state = GAME_STATE.PIZZA
+var game_state: GAME_STATE
 var time: int = 0;
 
 
 func _ready() -> void:
 	global_signals.game_end.connect(func(): change_state(GAME_STATE.END))
-	
+	global_signals.game_start.connect(func(): change_state(GAME_STATE.PLAY))
+	change_state(GAME_STATE.PIZZA)
 
-
+func clear_data():
+	if has_node("time_manager"):
+		$time_manager.elapsed_ms = 0;
 	
-func get_data():
+func get_time_data():
 	if has_node("time_manager"):
 		time = $time_manager.elapsed_ms
 		print(time)
 	else:
 		print("error")
 	
-func set_data(_scene):
+func set_time_data(_scene):
 	_scene.time_result = time;
 	
 func change_screen_to_pizza():
@@ -48,7 +52,8 @@ func change_screen_to_win():
 	var win_scene = preload("res://win_screen.tscn");
 	var scene = win_scene.instantiate()
 	var UI_node = $CanvasLayer.get_node_or_null("Control")
-	set_data(scene);
+	get_time_data();
+	set_time_data(scene);
 	$time_manager.visible=false;
 	$level_manager.visible=false;
 	$score_counter.visible=false;
@@ -63,13 +68,15 @@ func change_state(new_state: GAME_STATE):
 	if game_state == new_state:
 		return;
 	
+	game_state = new_state;
+	
 	match game_state:
 		GAME_STATE.PIZZA:
-			pass;
+			change_screen_to_pizza();
 		GAME_STATE.PLAY:
-			pass;
+			change_screen_to_game();
 		GAME_STATE.END:
-			pass;
+			change_screen_to_win();
 
 #Cheats
 func _input(event: InputEvent) -> void:

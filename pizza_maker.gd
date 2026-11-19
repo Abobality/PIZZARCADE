@@ -29,3 +29,8 @@ func ingridient_write(ingridient: COMPONENTS):
 	
 	if layer_node:
 		layer_node.visible = true
+
+
+func _on_button_pressed() -> void:
+	global_signals.game_start.emit()
+	print(pizza)
