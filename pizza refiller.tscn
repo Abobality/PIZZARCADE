@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dc1xftedkjg6u"]
 
 [ext_resource type="Script" uid="uid://dpxiomkctaji3" path="res://pizza_refiller.gd" id="1_fwrul"]
-[ext_resource type="Texture2D" uid="uid://dieh8esqfhvag" path="res://icon.svg" id="1_jsu5k"]
+[ext_resource type="Texture2D" uid="uid://b1ub0o36ogjgo" path="res://pizza_obj.png" id="2_fwrul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
-size = Vector2(128, 128)
+size = Vector2(80, 80)
 
 [node name="Area2D" type="Area2D" unique_id=1485475984]
 script = ExtResource("1_fwrul")
@@ -16,8 +16,12 @@ shape = SubResource("RectangleShape2D_bhunq")
 wait_time = 4.0
 one_shot = true
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1568860772]
-texture = ExtResource("1_jsu5k")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=963029932]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_fwrul")
+hframes = 2
+frame = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
