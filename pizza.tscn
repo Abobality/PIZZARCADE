@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://ddhtddbcs8co0"]
 
-[ext_resource type="Texture2D" uid="uid://dieh8esqfhvag" path="res://icon.svg" id="1_5birb"]
 [ext_resource type="Script" uid="uid://dgeg8nn54jxjj" path="res://pizza.gd" id="2_i514n"]
+[ext_resource type="Texture2D" uid="uid://f50qq6643cti" path="res://pizza.png" id="2_ycrcj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
-radius = 63.0
+radius = 40.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glui1"]
+atlas = ExtResource("2_ycrcj")
 
 [node name="Area2D" type="Area2D" unique_id=2054405996]
 script = ExtResource("2_i514n")
@@ -12,7 +15,58 @@ script = ExtResource("2_i514n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=787106085]
 shape = SubResource("CircleShape2D_bhunq")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=535635396]
-texture = ExtResource("1_5birb")
+[node name="pizza" type="Sprite2D" parent="." unique_id=347611353]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_glui1")
+hframes = 7
+
+[node name="pepperoni" type="Sprite2D" parent="pizza" unique_id=228725827]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_glui1")
+hframes = 7
+frame = 1
+
+[node name="sausages" type="Sprite2D" parent="pizza" unique_id=241593030]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_glui1")
+hframes = 7
+frame = 2
+
+[node name="basil" type="Sprite2D" parent="pizza" unique_id=760269988]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_glui1")
+hframes = 7
+frame = 3
+
+[node name="pineapple" type="Sprite2D" parent="pizza" unique_id=612961672]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_glui1")
+hframes = 7
+frame = 4
+
+[node name="mushroom" type="Sprite2D" parent="pizza" unique_id=431566877]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_glui1")
+hframes = 7
+frame = 5
+
+[node name="olives" type="Sprite2D" parent="pizza" unique_id=536347438]
+visible = false
+texture_filter = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("AtlasTexture_glui1")
+hframes = 7
+frame = 6
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -8,8 +8,10 @@ enum GAME_STATE{
 	END
 };
 
+
 var game_state: GAME_STATE
 var time: int = 0;
+var pizza: Array[global_names.COMPONENTS] = [];
 
 
 func _ready() -> void:
@@ -21,6 +23,17 @@ func clear_data():
 	if has_node("time_manager"):
 		$time_manager.elapsed_ms = 0;
 	
+func get_pizza_data():
+	var pizza_node = $CanvasLayer.get_node_or_null("pizza_maker")
+	if pizza_node:
+		pizza = pizza_node.pizza
+		print("Recipe: ", pizza)
+	else:
+		print("error: pizza_maker not found in CanvasLayer")
+	
+func set_pizza_data():
+	global_names.global_pizza = pizza
+
 func get_time_data():
 	if has_node("time_manager"):
 		time = $time_manager.elapsed_ms
@@ -38,6 +51,7 @@ func change_screen_to_pizza():
 	
 func change_screen_to_game():
 	var pizza_node = $CanvasLayer.get_node_or_null("pizza_maker")
+	get_pizza_data()
 	if pizza_node:
 		pizza_node.queue_free()
 	var UI = preload("res://UI.tscn");

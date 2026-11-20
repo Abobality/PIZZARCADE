@@ -1,10 +1,84 @@
 [gd_scene format=3 uid="uid://8dxwr0tm2evp"]
 
 [ext_resource type="Script" uid="uid://wln8kncp05lc" path="res://basic_child.gd" id="1_bsgjq"]
-[ext_resource type="Texture2D" uid="uid://dieh8esqfhvag" path="res://icon.svg" id="2_squog"]
+[ext_resource type="Texture2D" uid="uid://b3pjcwxbi3jqb" path="res://child.png" id="2_squog"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 63.28507
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhunq"]
+atlas = ExtResource("2_squog")
+
+[sub_resource type="Animation" id="Animation_squog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_g4p3t"]
+resource_name = "eat"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13684842, 0.26913524, 0.4006618),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_t7udu"]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_bgshf"]
+resource_name = "idle_blink"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1718208),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgshf"]
+_data = {
+&"RESET": SubResource("Animation_squog"),
+&"eat": SubResource("Animation_g4p3t"),
+&"idle": SubResource("Animation_t7udu"),
+&"idle_blink": SubResource("Animation_bgshf")
+}
 
 [node name="basic_child" type="Area2D" unique_id=1486003508 groups=["children"]]
 script = ExtResource("1_bsgjq")
@@ -12,7 +86,15 @@ script = ExtResource("1_bsgjq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1690387428]
 shape = SubResource("CircleShape2D_bhunq")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1146945230]
-texture = ExtResource("2_squog")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2042576649]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = SubResource("AtlasTexture_bhunq")
+flip_h = true
+hframes = 4
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1460000361]
+libraries/ = SubResource("AnimationLibrary_bgshf")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
