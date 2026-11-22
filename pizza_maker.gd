@@ -4,7 +4,6 @@ extends Control
 var pizza: Array[global_names.COMPONENTS] = [];
 
 
-
 func _ready() -> void:
 	for btn in find_children("*", "ActionButton", true, false):
 		btn.ingridient_push.connect(ingridient_write)

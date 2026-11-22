@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctqi0ms13wrm2"]
 
 [ext_resource type="Script" uid="uid://cel7rxjp5jd4u" path="res://player_control.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dbvyamhw47w0i" path="res://pizza_maker.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dbvyamhw47w0i" path="res://sprites/pizza_maker.png" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://d4kcavdc2srtt" path="res://pizza_box.tscn" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]

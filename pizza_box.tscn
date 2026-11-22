@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4kcavdc2srtt"]
 
-[ext_resource type="Texture2D" uid="uid://b1ub0o36ogjgo" path="res://pizza_obj.png" id="1_7njfw"]
+[ext_resource type="Texture2D" uid="uid://b1ub0o36ogjgo" path="res://sprites/pizza_obj.png" id="1_7njfw"]
 [ext_resource type="Script" uid="uid://bekyas2ds0k62" path="res://pizza_box.gd" id="1_kwsw1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_riqys"]

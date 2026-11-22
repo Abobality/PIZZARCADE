@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cfhdx3myhev8e"]
+
+[ext_resource type="AudioStream" uid="uid://pjt85dcrr62n" path="res://mixkit-winning-a-coin-video-game-2069.wav" id="1_81fu2"]
+[ext_resource type="Script" uid="uid://bx6tqrbj50qea" path="res://audio_player.gd" id="1_f1804"]
+
+[node name="AudioPlayer" type="Node2D" unique_id=1066418642]
+script = ExtResource("1_f1804")
+
+[node name="Switch_Player" type="AudioStreamPlayer" parent="." unique_id=111319952]
+stream = ExtResource("1_81fu2")

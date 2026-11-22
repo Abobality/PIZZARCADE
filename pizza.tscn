@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddhtddbcs8co0"]
 
 [ext_resource type="Script" uid="uid://dgeg8nn54jxjj" path="res://pizza.gd" id="2_i514n"]
-[ext_resource type="Texture2D" uid="uid://f50qq6643cti" path="res://pizza.png" id="2_ycrcj"]
+[ext_resource type="Texture2D" uid="uid://f50qq6643cti" path="res://sprites/pizza.png" id="2_ycrcj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bhunq"]
 radius = 40.0

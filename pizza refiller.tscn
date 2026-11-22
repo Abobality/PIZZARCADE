@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc1xftedkjg6u"]
 
 [ext_resource type="Script" uid="uid://dpxiomkctaji3" path="res://pizza_refiller.gd" id="1_fwrul"]
-[ext_resource type="Texture2D" uid="uid://b1ub0o36ogjgo" path="res://pizza_obj.png" id="2_fwrul"]
+[ext_resource type="Texture2D" uid="uid://b1ub0o36ogjgo" path="res://sprites/pizza_obj.png" id="2_fwrul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(80, 80)

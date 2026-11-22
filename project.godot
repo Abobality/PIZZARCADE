@@ -24,6 +24,7 @@ global_signals="*uid://cy50bxgbndrag"
 position_mono="*uid://c7n5t84urta0g"
 juice="*uid://dmy4wn7q13xob"
 global_names="*uid://bl6bgc36yg820"
+audio_player="*uid://cfhdx3myhev8e"
 
 [display]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkl4s2833pxmy" path="res://button_script.gd" id="1_8p8sp"]
 [ext_resource type="Script" uid="uid://cqhpnltbivog0" path="res://pizza_maker.gd" id="1_w8vbe"]
-[ext_resource type="Texture2D" uid="uid://f50qq6643cti" path="res://pizza.png" id="2_is5sg"]
+[ext_resource type="Texture2D" uid="uid://f50qq6643cti" path="res://sprites/pizza.png" id="2_is5sg"]
 [ext_resource type="Script" uid="uid://dyk7x808bith3" path="res://action_pizza_button.gd" id="2_ymnrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_riqys"]

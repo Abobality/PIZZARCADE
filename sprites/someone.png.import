@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbvyamhw47w0i"
-path="res://.godot/imported/pizza_maker.png-08d78e86c2bd0016e5dafd25f0b00890.ctex"
+uid="uid://mrwuahjjd3ui"
+path="res://.godot/imported/someone.png-cd839eb2c3f88296fc466b45990ac0e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pizza_maker.png"
-dest_files=["res://.godot/imported/pizza_maker.png-08d78e86c2bd0016e5dafd25f0b00890.ctex"]
+source_file="res://sprites/someone.png"
+dest_files=["res://.godot/imported/someone.png-cd839eb2c3f88296fc466b45990ac0e5.ctex"]
 
 [params]
 
