@@ -60,7 +60,7 @@ func change_screen_to_game():
 	$time_manager.visible=true;
 	$level_manager.visible=true;
 	$score_counter.visible=true;
-	
+	global_signals.game_start.emit()
 
 func change_screen_to_win():
 	var win_scene = preload("res://win_screen.tscn");
@@ -99,3 +99,5 @@ func _input(event: InputEvent) -> void:
 			global_signals.change_level.emit();
 		if event.keycode == KEY_Q: 
 			global_signals.game_end.emit();
+		if event.keycode == KEY_R: 
+			game_state = GAME_STATE.PIZZA;
